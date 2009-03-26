@@ -17,8 +17,23 @@ let g:colors_name = "darkdevel"
 " General settings
 " ================
 set background=dark
-set cursorline
-"set cursorcolumn
+if v:version > 700
+  set cursorline
+  "set cursorcolumn
+endif
+
+let g:Darkdevel = {}
+let g:Darkdevel.cursor = {}
+let g:Darkdevel.cursor.ctermfg = 'NONE'
+let g:Darkdevel.cursor.guifg   = '#000000'
+let g:Darkdevel.cursor.ctermbg = 'NONE'
+let g:Darkdevel.cursor.guibg   = '#FFFFFF'
+
+let g:Darkdevel.comment = {}
+let g:Darkdevel.comment.ctermfg = 'DarkGray'
+let g:Darkdevel.comment.guifg   = '#646464'
+let g:Darkdevel.comment.ctermbg = 'NONE'
+let g:Darkdevel.comment.guibg   = 'NONE'
 
 " Cursor style
 " ============
@@ -82,7 +97,7 @@ set cursorline
   "highlight TabLineFill
   "highlight TabLineSel
 
-  highlight Title           ctermfg=Gray        guifg=#0F0F0F
+  highlight Title           ctermfg=Gray        guifg=#F0F0F0     ctermbg=NONE        guibg=NONE
   highlight Visual          ctermfg=Gray        guifg=#FFFFFF     ctermbg=DarkBlue    guibg=#505064
   highlight VisualNOS       ctermfg=NONE        guifg=NONE        ctermbg=DarkGreen   guibg=#506450
   highlight WildMenu        ctermfg=NONE        guifg=#777777     ctermbg=DarkGray    guibg=#0F0F0F
